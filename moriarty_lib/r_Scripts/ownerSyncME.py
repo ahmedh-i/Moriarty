@@ -1,4 +1,4 @@
-from r_Scripts.modules import *
+from moriarty_lib.r_Scripts.modules import *
 
 class getOwnerSYNCME:
     def __init__(self):

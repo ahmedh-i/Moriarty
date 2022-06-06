@@ -6,8 +6,8 @@ import sys
 import os
 from clint.textui import colored
 import getpass
-from OutlookAccount.outlook import run
-from banners.installation_banner import *
+from moriarty_lib.OutlookAccount.outlook import run
+from moriarty_lib.banners.installation_banner import *
 class Moriarty_Project:
 	def __init__(self):
 		###########USAGE CHECK#################
@@ -58,7 +58,7 @@ class Moriarty_Project:
 	
 	#phone number information
 	def phoneInfo(self):
-		from location import location_risk
+		from moriarty_lib.location import location_risk
 		try:
 			location_risk.location(self.phoneNumber)
 		except:
@@ -66,7 +66,7 @@ class Moriarty_Project:
 			sys.exit()
 	#find owner of number from truecaller
 	def getOwnerTruecaller(self):
-		from r_Scripts.ownerTruecaller import getOwnerTRUECALLER
+		from moriarty_lib.r_Scripts.ownerTruecaller import getOwnerTRUECALLER
 		try:
 			
 			getOwnerTRUECALLER().getName(self.phoneNumber,self.username,self.password)
@@ -77,7 +77,7 @@ class Moriarty_Project:
 
 	#find owner of number from snycme
 	def getOwnerSyncME(self):
-		from r_Scripts.ownerSyncME import getOwnerSYNCME
+		from moriarty_lib.r_Scripts.ownerSyncME import getOwnerSYNCME
 		try:
 			getOwnerSYNCME().getName(self.phoneNumber,self.username,self.password)
 			ownerName=getOwnerSYNCME().ownerOfNumber
@@ -87,38 +87,38 @@ class Moriarty_Project:
 	
 	#Social Media Functions
 	def getFacebookInfo(self):
-		from socialMedia.facebook import facebookInformation
+		from moriarty_lib.socialMedia.facebook import facebookInformation
 		facebookInformation().facebookStart(self.phoneNumber)
 	def getGoogleInfo(self):
-		from socialMedia.google import googleInformation
+		from moriarty_lib.socialMedia.google import googleInformation
 		googleInformation().googleStart(self.phoneNumber)
 	def getInstagramInfo(self):
-		from socialMedia.instagram import instagramInformation
+		from moriarty_lib.socialMedia.instagram import instagramInformation
 		instagramInformation().instagramStart(self.phoneNumber) 
 	def getLinkedinInfo(self):
-		from socialMedia.linkedin import linkedinInformation
+		from moriarty_lib.socialMedia.linkedin import linkedinInformation
 		linkedinInformation().linkedinStart(self.phoneNumber)  
 	def getMicrosoftInfo(self):
-		from socialMedia.microsoft import microsoftInformation
+		from moriarty_lib.socialMedia.microsoft import microsoftInformation
 		microsoftInformation().microsoftStart(self.phoneNumber)  
 	def getYandexInfo(self):
-		from socialMedia.yandex import yandexInformation
+		from moriarty_lib.socialMedia.yandex import yandexInformation
 		yandexInformation().yandexStart(self.phoneNumber)
 
 	# Links related with the number
 	def getLinks(self):
-		from DeepInfo.deep_info1 import getLinks
+		from moriarty_lib.DeepInfo.deep_info1 import getLinks
 		getLinks().getLinksStart(self.phoneNumber)
 
 	# Spam, Report, Lookup, comments
 	def unkownphone_(self):
-		from DeepInfo.deep_info2 import unkownphone
+		from moriarty_lib.DeepInfo.deep_info2 import unkownphone
 		unkownphone().unkownphoneStart(self.phoneNumber)
 	def whocallsme_(self):
-		from DeepInfo.deep_info3 import whocallsme
+		from moriarty_lib.DeepInfo.deep_info3 import whocallsme
 		whocallsme().whocallsmeStart(self.phoneNumber)
 	def spamcalls_(self):
-		from DeepInfo.risks import spamcalls
+		from moriarty_lib.DeepInfo.risks import spamcalls
 		spamcalls().spamcallsStart(self.phoneNumber)
 
 	def usageCountdown(self):

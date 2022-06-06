@@ -1,4 +1,4 @@
-from r_Scripts.modules import *
+from moriarty_lib.r_Scripts.modules import *
 from pyvirtualdisplay import Display
 class unkownphone:
     def __init__(self):
