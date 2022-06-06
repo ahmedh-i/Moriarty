@@ -23,6 +23,15 @@ setup(
         "Programming Language :: Python :: 2",
         "Programming Language :: Python :: 3",
     ],
-    install_requires=[],
-    packages=find_packages(),
+    install_requires=[
+        'selenium',
+        'phonenumbers',
+        'pyvirtualdisplay',
+        'requests',
+        'undetected_chromedriver',
+        'clint',
+        'certifi',
+        'bs4',
+    ],
+    packages=find_packages(include=['moriarty_lib', 'moriarty_lib.*']),
 )
