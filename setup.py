@@ -1,6 +1,6 @@
 import sys
 
-from setuptools import setup
+from setuptools import setup, find_packages
 from piplapis import __version__
 
 
@@ -25,5 +25,5 @@ setup(
         "Programming Language :: Python :: 3",
     ],
     install_requires=[],
-    packages=["moriarty_project"],
+    packages=find_packages(),
 )
