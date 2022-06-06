@@ -1,7 +1,6 @@
 import sys
 
 from setuptools import setup, find_packages
-from piplapis import __version__
 
 
 py_version = sys.version_info[:2]
@@ -11,7 +10,7 @@ if py_version[0] < 3 and py_version not in [(2, 6), (2, 7)]:
 
 setup(
     name="moriarty",
-    version=__version__,
+    version='1.0.0',
     author="",
     author_email="",
     description="Client library for finding important information about a spesific phone number.",
